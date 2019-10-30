@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<template name="nav">
+  <view class="nav-bar"> 
+  <view wx:for="{{navList}}" wx:key="" id="{{item.id}}" data-index="{{index}}" bindtap="onTapTag" class="nav-item {{activeIndex==index ? 'active':'' }}"> {{item.title}} </view>
+  </view>
+</template>

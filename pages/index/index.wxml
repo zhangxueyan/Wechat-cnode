@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<import src="../common/list.wxml"/>
+<import src="../common/nav.wxml"/>
+<view class="container">
+  <template is="nav" data="{{navList,activeIndex}}"></template>
+  <template is="list" data="{{list}}"></template>
+  <!-- 加了loading组件只为了bangding lower事件 -->
+  <loading type="circle" show="{{show}}"></loading>
+</view>

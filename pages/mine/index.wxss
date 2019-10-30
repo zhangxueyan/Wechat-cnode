@@ -1,0 +1,104 @@
+/**index.wxss**/
+.me{
+  height: 100%;
+}
+.userinfo{
+  position: relative;
+  width: 750rpx;
+  height: 320rpx;
+  background: #444;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userinfo-avatar {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.usermotto{
+  margin-top: 10rpx;
+}
+
+.about-item{
+  padding:10rpx 30rpx;
+}
+.about-item-title{
+  display: block;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+.about-item-content{
+  margin-top: 10rpx;
+  display: block;
+  text-indent: 40rpx;
+}
+
+.link{
+  color: #80bd01;
+  text-decoration: underline;
+}
+
+.view-cell-ft{
+   text-align: right;
+   color: #888;
+}
+.view-img{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.view-name{
+  vertical-align: middle;
+}
+.view-cell-primary{
+  margin-top:10rpx;
+}
+
+.view-cell-arrow{
+  text-align: right;
+  color: #888;
+}
+.view-cell-arrow::after {
+    content: " ";
+    display: inline-block;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height:25rpx;
+    width:25rpx;
+    border-width: 1px 1px 0 0;
+    border-color: #888;
+    border-style: solid;
+    position: relative;
+    top: 5px;
+    left: -10px;
+    margin-left:30rpx;
+}
+.view-cell-line{
+  padding: 20rpx;
+  display:flex;
+  justify-content: space-between;
+  line-height:40rpx;
+  border-bottom: 1px solid #eee;
+}
+.view-out{
+  width: 50%;
+margin: 20rpx auto;
+  text-align: center;
+padding: 10rpx 0;
+border: 1rpx solid #aaa;
+
+
+}

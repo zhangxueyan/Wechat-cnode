@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<template name="list">
+  <view class="scroll-list">
+      <view wx:for="{{list}}" wx:key="" class="list-item">
+        <navigator url="/pages/detail/index?id={{item.id}}">
+          <view class="list-top">
+            <image src="{{item.author.avatar_url}}" class="avatar"></image>
+            <view class="list-cont">
+              <view class="list-name-long">
+                <view class="user-name">{{index}}  {{item.author.loginname}}</view>
+                <view class="how-long">{{item.last_reply_at}}</view>
+              </view>
+              <text class="list-title"><text wx:if="{{item.top}}" class="zhiding">置顶</text>{{item.title}}</text>
+            </view>
+          </view>
+          <view class="list-bot">
+            <view class=".bot-item bot-item12">
+              <view class="bot-item bot-item1"> 
+              <image src="../../images/icon/reply.png"></image>
+              <text>{{item.reply_count}}</text>
+            </view>
+            <view class="bot-item bot-item2"> 
+              <image src="../../images/icon/visit.png"></image>
+              <text>{{item.visit_count}}</text>
+            </view>
+            </view>
+
+            <view class="bot-item bot-item3" wx:if="{{item.good}}"> 
+              <image src="../../images/icon/type.png"></image>
+              <text>精华</text>
+            </view>
+
+            <view class="bot-item bot-item3 clearfix" wx:if="{{item.tab=='share'}}"> 
+              <image src="../../images/icon/type.png"></image>
+              <text>分享</text>
+            </view>
+
+            <view class="bot-item bot-item3 clearfix" wx:if="{{item.tab=='ask'}}"> 
+              <image src="../../images/icon/type.png"></image>
+              <text>问答</text>
+            </view>
+
+            <view class="bot-item bot-item3 clearfix" wx:if="{{item.tab=='job'}}"> 
+              <image src="../../images/icon/type.png"></image>
+              <text>招聘</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+  </view>
+</template>

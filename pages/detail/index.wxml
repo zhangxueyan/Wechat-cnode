@@ -1,0 +1,48 @@
+<view class="container">
+
+    <view class="detail-head">
+      <image src="{{detail.data.author.avatar_url}}" class="detail-avatar"></image>
+      <view class="detail-info">
+        <view>
+          <text>{{detail.data.author.loginname}}</text>
+          <text wx:if="{{detail.data.good}}" class="detail-label">#精华#</text>
+          <text wx:if="{{detail.data.tab=='share'}}" class="detail-label">#分享#</text>
+          <text wx:if="{{detail.data.tab=='ask'}}" class="detail-label">#问答#</text>
+          <text wx:if="{{detail.data.tab=='job'}}" class="detail-label">#招聘#</text>
+        </view>
+        <view>楼主发表于{{detail.create_at}}</view>
+      </view>
+
+      <view class="detail-collect" id="{{detail.data.id}}"  wx:if="{{detail.data.is_collect==false}}">收藏</view>
+      <view class="detail-collect" id="{{detail.data.id}}"  wx:if="{{detail.data.is_collect==true}}">取消收藏</view>
+      
+    </view>
+    <view class="detail-title">{{detail.data.title}}</view>
+    <view class="content-info">{{detail.data.content}}</view>
+
+    <view class="detail-commet">评论</view>
+
+    <view class="detail-clist">
+      <view wx:for="{{replies}}" wx:key="" class="detail-item">
+        <image src="{{item.author.avatar_url}}" class="detail-avatar"></image>
+        <view class="comment-info">
+            <text class="commet-1">{{item.author.loginname}}</text>
+            <view class="commet-2">{{index+1}}楼主发表于{{item.create_at}}</view>
+            <view class="commet-3">{{item.content}}</view>
+        </view>
+       <image class="detail-zan" src="/images/icon/zan.png"></image>
+      </view>
+    </view>
+
+    <block wx:if="{{replies.length < 1}}">
+        <view class="detail-comment-null">
+          <image class="imgnull" mode="scaleToFill" src="/images/icon/null.png"></image>
+          <text class="textnull">暂无收录评论 </text>
+        </view>
+    </block>
+
+
+      <modal title="消息" confirm-text="确认" cancel-text="关闭" hidden="{{modalHidden}}" bindconfirm="confirmChange" bindcancel="cancelChange">
+    您还没未登录conde，是否前往认证登录？
+  </modal>
+</view>
